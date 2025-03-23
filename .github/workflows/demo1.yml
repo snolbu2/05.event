@@ -3,6 +3,13 @@ on:
   pull_request:
     types: [opened, synchronize]
   workflow_dispatch:
+  push:
+    branches:
+      - main # main
+      - 'dev-*'
+      - 'feat/**'
+    paths-ignore:
+      - '.github/workflows/&'
 jobs:
   deploy:
     runs-on: ubuntu-latest
